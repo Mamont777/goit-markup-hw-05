@@ -13,6 +13,7 @@
     --icon-color: #AFB1B8;
     --icon-bc: rgba(255, 255, 255, 0.1);
     --card-border-color: #EEEEEE;
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -160,13 +161,32 @@ button {
 
 
 .link-current {
+    position: relative;
     display: block;
     align-items: center;
     padding-top: 32px;
     padding-bottom: 32px;
     font-weight: 500;
     color: var(--accent-color);
+    transition: color 250ms var(--timing-function);
+
 }
+
+
+
+.link-current::after {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+
+}
+
+
 
 .site-list {
     display: flex;
@@ -184,6 +204,8 @@ button {
     font-weight: 500;
     line-height: 1.1;
     letter-spacing: 0.02em;
+    transition: color 250ms var(--timing-function);
+
     color: var(--secondary-text-color);
 }
 
@@ -203,6 +225,8 @@ button {
     font-weight: 500;
     line-height: 1.1;
     letter-spacing: 0.02em;
+    transition: color 250ms var(--timing-function);
+
     color: var(--secondary-text-color);
 }
 
@@ -260,12 +284,16 @@ button {
     letter-spacing: 0.06em;
     color: var(--tertiary-text-color);
     padding: 10px 32px;
+    transition: background-color 250ms var(--timing-function);
+
+
 }
 
 .main-button:hover,
 .main-button:focus {
     background-color: #188ce8;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
 }
 
 /*--------------- Main content--------- */
@@ -319,8 +347,28 @@ button {
     align-items: center;
 }
 
-.image-list .item+.item {
+.image-list .img-item+.img-item {
     margin-left: 30px;
+}
+
+.img-item {
+    position: relative;
+}
+
+.img-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 224px;
+    width: 370px;
+    height: 70px;
+    line-height: 1.5;
+    text-transform: uppercase;
+
+    color: var(--tertiary-text-color);
+    background-color: rgba(47, 48, 58, 0.8);
+    ;
 }
 
 .our-team {
@@ -384,6 +432,7 @@ button {
     height: 44px;
     border-radius: 50%;
     color: var(--icon-color);
+    transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function);
 }
 
 .social-link:hover,
@@ -418,15 +467,13 @@ button {
     width: 100%;
     height: 100%;
     color: var(--icon-color);
-    border: 1px solid var(--icon-color);
-
+    border: 1px solid;
+    transition: color 250ms var(--timing-function);
 }
 
 .clients-link:hover,
 .clients-link:focus {
     color: var(--accent-color);
-    border: 1px solid var(--accent-color);
-
 }
 
 .icon-client {
@@ -461,6 +508,7 @@ button {
     line-height: 1.7;
     color: var(--tertiary-text-color);
     text-decoration: none;
+    transition: color 250ms var(--timing-function);
 }
 
 .link-address:hover,
@@ -473,6 +521,7 @@ button {
     line-height: 1.7;
     color: var(--address-color);
     text-decoration: none;
+    transition: color 250ms var(--timing-function);
 }
 
 .link-mail:hover,
@@ -486,6 +535,7 @@ button {
     line-height: 1.7;
     color: var(--address-color);
     text-decoration: none;
+    transition: color 250ms var(--timing-function)
 }
 
 .link-number:hover,
@@ -526,6 +576,8 @@ button {
     border-radius: 50%;
     color: var(--tertiary-text-color);
     background-color: var(--icon-bc);
+    transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function);
+
 }
 
 .join-link:hover,
@@ -563,6 +615,9 @@ button {
     color: var(--primary-text-color);
     background-color: var(--button-bc);
     letter-spacing: 0.03em;
+    transition-property: color, background-color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: var(--timing-function);
 }
 
 .portfolio-btn:hover,
@@ -584,11 +639,42 @@ button {
 .cards-link {
     display: block;
     text-decoration: none;
+    transition: box-shadow 250ms var(--timing-function);
 }
 
 .cards-link:hover,
 .cards-link:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.cards-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.cards-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 63px 24px;
+    transform: translateY(101%);
+    transition: transform 250ms var(--timing-function);
+
+    background-color: rgba(33, 150, 243, 0.9);
+    ;
+}
+
+.cards-link:hover .cards-overlay,
+.cards-link:focus .cards-overlay {
+    transform: translateY(0);
+
+}
+
+.cards-text {
+    line-height: 1.5;
+    color: var(--tertiary-text-color);
 }
 
 .cards {
