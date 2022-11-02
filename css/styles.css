@@ -673,6 +673,7 @@ button {
 }
 
 .cards-text {
+    font-size: 18px;
     line-height: 1.5;
     color: var(--tertiary-text-color);
 }
