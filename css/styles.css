@@ -341,8 +341,22 @@ button {
     height: 30px;
     border-radius: 50%;
     background-color: var(--tertiary-text-color);
-    border: 1px solid rgba(0, 0, 0, 0.1)
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+
 }
+
+.close-icon {
+    fill: var(--logo-color);
+    transition: fill 250ms var(--timing-function);
+}
+
+.close-icon:hover,
+.close-icon:focus {
+    fill: var(--accent-color);
+}
+
+
 
 /*--------------- Main content--------- */
 
