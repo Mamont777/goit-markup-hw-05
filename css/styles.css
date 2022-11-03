@@ -156,15 +156,11 @@ button {
     line-height: 1.1;
     letter-spacing: 0.02em;
     color: var(--primary-text-color);
-
+    transition: color 250ms var(--timing-function);
 }
 
 .header-link:hover,
 .header-link:focus {
-    color: var(--accent-color);
-}
-
-.header-link.current {
     color: var(--accent-color);
 }
 
@@ -176,7 +172,7 @@ button {
     padding-bottom: 32px;
     font-weight: 500;
     color: var(--accent-color);
-    transition: color 250ms var(--timing-function);
+
 
 }
 
