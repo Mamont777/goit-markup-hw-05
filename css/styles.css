@@ -164,16 +164,9 @@ button {
     color: var(--accent-color);
 }
 
-.current {
+.header-link.current {
     position: relative;
-    display: block;
-    align-items: center;
-    padding-top: 32px;
-    padding-bottom: 32px;
-    font-weight: 500;
     color: var(--accent-color);
-
-
 }
 
 .header-link.current::after {
@@ -185,11 +178,9 @@ button {
     height: 4px;
     background-color: var(--accent-color);
     border-radius: 2px;
+    transition: color 250ms var(--timing-function);
 
 }
-
-
-
 
 
 .site-list {
