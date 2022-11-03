@@ -159,8 +159,16 @@ button {
 
 }
 
+.header-link:hover,
+.header-link:focus {
+    color: var(--accent-color);
+}
 
-.link-current {
+.header-link.current {
+    color: var(--accent-color);
+}
+
+.current {
     position: relative;
     display: block;
     align-items: center;
@@ -172,9 +180,7 @@ button {
 
 }
 
-
-
-.link-current::after {
+.header-link.current::after {
     position: absolute;
     bottom: 0;
     content: "";
@@ -185,6 +191,8 @@ button {
     border-radius: 2px;
 
 }
+
+
 
 
 
@@ -409,13 +417,14 @@ button {
 }
 
 .img-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: absolute;
     top: 224px;
     width: 370px;
     height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     line-height: 1.5;
     text-transform: uppercase;
 
